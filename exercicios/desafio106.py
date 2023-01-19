@@ -24,9 +24,9 @@ def subtitle(resp):
     """
     # style = default, textcolor = black, background = cyan
     bluebg = '\033[30;46m'
-    linha = '~' * (len(resp.lower()) + 36)
+    linha = '~' * (len(resp) + 36)
     print(f'{bluebg}{linha}'
-          f"\n  Acessando o manual do comando '{str(resp)}'  \n"
+          f'\n  Acessando o manual do comando \'{resp}\'  \n'
           f'{linha}')
 
 
@@ -54,6 +54,6 @@ class PyHelp:
         if resp.upper() == 'FIM':
             footer()
             break
-        subtitle(resp)
+        subtitle(resp.lower())
         print(f'{whitebg}')
-        help(resp)
+        help(resp.lower())
