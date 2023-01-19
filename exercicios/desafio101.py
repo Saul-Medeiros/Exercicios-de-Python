@@ -4,10 +4,10 @@ receber como parâmetro o ano de nascimento de uma pessoa, retornando um valor
 literal indicando se uma pessoa tem voto NEGADO, OPCIONAL ou OBRIGATÓRIO nas
 eleições.
 """
-from datetime import date
 
 
 def voto(ano):
+    from datetime import date
     """
     Indica a situação eleitoral do usuário de acordo com a sua idade.
     :param ano: Recebe o ano de nascimento do usuário.
@@ -17,7 +17,7 @@ def voto(ano):
     idade = atual - ano
     if idade < 16:
         return 'foi NEGADO'
-    elif 18 > idade >= 16 or idade >= 65:
+    elif 18 > idade >= 16 or idade > 65:
         return 'é OPCIONAL'
     else:
         return 'é OBRIGATÓRIO'

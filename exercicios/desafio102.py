@@ -19,23 +19,23 @@ def fatorial(num, show=False):
     if show:
         print(f'{num}! = ', end='')
         for c in range(num, 0, -1):
-            if c == 1:
-                print('1 = ', end='')
-                break
-            print(f'{c} x ', end='')
+            print(f'{c} ', end='')
+            if c > 1:
+                print('x ', end='')
+            else:
+                print(f'= ', end='')
         print(f'{fat}')
 
 
 # main
-n = int(input('Informe um númmero para calcular seu fatorial: '))
+n = int(input('Informe um número para calcular seu fatorial: '))
 resp = str(input('Deseja mostrar o processo de cálculo '
                  'do fatorial? [S/N]: ')).strip().upper()[0]
 if resp == 'S':
     r = True
-elif resp == 'N':
-    r = False
 else:
-    print('Foi informado uma resposta incorreta, portanto, o processo de '
-          'cálculo não será mostrado.')
+    if resp != 'N':
+        print('Foi informado uma resposta incorreta, portanto, o processo de '
+              'cálculo não será mostrado.')
     r = False
 fatorial(n, r)

@@ -6,10 +6,20 @@ não tenha sido informado corretamente.
 """
 
 
-def ficha(nome='<desconhecido>', gols=0):
-    print(f'O jogador {nome} fez {gols} gol(s) no campeonato.')
+def ficha(jogador='<desconhecido>', gols=0):
+    print(f'O jogador {jogador} fez {gols} gol(s) no campeonato.')
 
 
-jogador = str(input('Nome do Jogador: '))
-g = input('Número de Gols: ')
-ficha(jogador, g)
+n = str(input('Nome do Jogador: ')).strip().title()
+g = str(input('Número de Gols: '))
+# se g for numérico
+if g.isnumeric():
+    # transforma str em int
+    g = int(g)
+else:
+    g = 0
+# se jogador não tiver texto
+if n == '':
+    ficha(gols=g)
+else:
+    ficha(n, g)
