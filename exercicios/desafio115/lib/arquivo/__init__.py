@@ -13,6 +13,7 @@ def arquivoexiste(nome):
 
 def criararquivo(nome):
     try:
+        # escrever um novo arquivo de texto
         a = open(nome, 'wt+')  # write text+
         a.close()
     # caso dê um erro generalizado
@@ -30,6 +31,7 @@ def lerarquivo(nome):
     else:
         cabecalho('PESSOAS CADASTRADAS')
         for line in a:
+            # remove o ; e usa como referência para dividir as strings
             dado = line.split(';')
             dado[1] = dado[1].replace('\n', '')
             print(f'{dado[0]:<30}{dado[1]:>3} anos')

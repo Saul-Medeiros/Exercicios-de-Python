@@ -5,6 +5,7 @@ O sistema só vai ter 2 opções: cadastrar uma nova pessoa e listar todas as
 pessoas cadastradas.
 """
 from desafio115.lib.arquivo import *
+from desafio115.lib.interface import *
 from time import sleep
 
 arq = 'cursoemvideo.txt'
